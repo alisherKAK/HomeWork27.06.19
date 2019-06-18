@@ -1,13 +1,16 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace HomeWork27_06_19
 {
     public class News
     {
+        public string Title { get; set; }
+        public string Description { get; set; }
+        public DateTime PublishedDate { get; set; }
 
+        public override string ToString()
+        {
+            return $"{Title}({PublishedDate.ToString("dd.MM.yy")})";
+        }
     }
 }

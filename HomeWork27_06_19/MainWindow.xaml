@@ -4,9 +4,25 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:HomeWork27_06_19"
+        xmlns:cefsharpwpf="clr-namespace:CefSharp.Wpf;assembly=CefSharp.Wpf"
         mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        TextElement.FontWeight="Regular"
+        TextElement.FontSize="13"
+        TextOptions.TextFormattingMode="Ideal"
+        TextOptions.TextRenderingMode="Auto"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="13*"/>
+            <ColumnDefinition Width="53*"/>
+        </Grid.ColumnDefinitions>
+        <ListBox Name="newsListBox" Foreground="White" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" SelectionChanged="ListBox_SelectionChanged">
+            <ListBox.Background>
+                <ImageBrush ImageSource="https://webcdn.triongames.com/defiance/img/slides/D2050Slide.jpg"/>
+            </ListBox.Background>
+        </ListBox>
+
+        <cefsharpwpf:ChromiumWebBrowser Grid.Column="1" IsBrowserInitializedChanged="NewsBrowserIsBrowserInitializedChanged" Name="newsBrowser"/>
     </Grid>
 </Window>
